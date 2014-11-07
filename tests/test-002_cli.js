@@ -24,14 +24,14 @@ function popd() {
 
 //
 describe('Command Line Interface', function () {
-	it('checking --verbose defaults', function (done) {
+	it('checking --verbosity defaults', function (done) {
 		cli.execute([
 			'node', path.resolve('./bin/component-hint'),
 			resolveCasePath('case-clean', 'component_A'),
 			'--reporter', 'devNull'
 		], function (error, componentHint) {
 			assert.ifError(error, 'cli#execute returned an error');
-			assert.equal(componentHint.verbose, false, 'verbose did not return correct default');
+			assert.equal(componentHint.verbosity, 0, 'verbosity did not return correct default');
 			done();
 		});
 	});
